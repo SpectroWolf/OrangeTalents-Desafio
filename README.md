@@ -2,11 +2,11 @@
 
 # Consumindo API REST Fipe Com SpringFramework 
 
-# Sobre mim:
+   # Sobre mim:
 
 Meu nome é Guilherme Goulart Cruvinel, tenho 23 anos e atualmente trabalho como Analista de Sistemas Jr. Estou cursando Sistemas de Informação na UFU, estou no 3º período, amante de jogos, leitura, tecnologia, séries e afins. Tenho me aventurado com Kotlin / Android Studio e também com Java de maneira geral. Mas chega de falar sobre mim e vamos para o projeto!
 
-# Orange Talents: Desafio
+   # Orange Talents: Desafio
 
 Link do GitHub com o Projeto: [https://github.com/SpectroWolf/OrangeTalents-Desafio](https://github.com/SpectroWolf/OrangeTalents-Desafio)
 
@@ -53,11 +53,11 @@ Mas então, beleza o desafio é criar um gerenciamento de Usuários e Veículos 
 
     Antes de tudo, antes de Classes/Interfaces e afins, nós precisamos configurar (mesmo que seja uma configuração bem básica) nosso Banco de Dados, aqui utilizado o Banco H2 por sua simplicidade de implementação, segue configurações para o projeto.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f74927ea-c7d4-4105-b574-8daea3afd771/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f74927ea-c7d4-4105-b574-8daea3afd771/Untitled.png)
+    ![5](https://user-images.githubusercontent.com/52512867/120227325-53c31280-c21f-11eb-96a4-965f3398abdb.png)
 
     Seguindo no tema "Antes de Tudo" temos o coração do projeto, sem ele nada funciona, isso mesmo estamos falando da nossa Application, aqui no projeto definida como DesafioOrangeApplication.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e6b7406-7a6c-4a50-b048-70572b25de38/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e6b7406-7a6c-4a50-b048-70572b25de38/Untitled.png)
+  ![6](https://user-images.githubusercontent.com/52512867/120227340-59205d00-c21f-11eb-813f-6acaaa29921e.png)
 
     Ela também é uma classe, porém diferente das outras da aplicação, só temos uma dela no projeto, onde iremos inicializar nosso Spring, com a anotação @SpringBootAplication e também iremos autorizar que o Spring Cloud Feign possa ser utilizado no projeto, com a anotação @EnableFeignClients. Beleza e o que mais ela faz? "Apenas" isso, inicia nosso projeto e permite que tudo funcione corretamente.
 
@@ -65,23 +65,23 @@ Mas então, beleza o desafio é criar um gerenciamento de Usuários e Veículos 
 
     Por exemplo a classe Usuario:
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c2abb42a-9fb3-48fb-a86b-6d885cab6e30/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c2abb42a-9fb3-48fb-a86b-6d885cab6e30/Untitled.png)
+    ![7](https://user-images.githubusercontent.com/52512867/120227355-5de51100-c21f-11eb-9874-39b930aa40cb.png)
 
     Complementando, dentro da @Entity nós definimos os nomes das colunas com o @Column e também colocamos os Setters and Getters, que nada mais são que nossos métodos de invocar (e não é a invocação do mal que vocês pensaram) nossos atributos da classe, para utilização no código por exemplo: 
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/87cca82e-8304-47a5-8112-87193aa5293f/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/87cca82e-8304-47a5-8112-87193aa5293f/Untitled.png)
+    ![8](https://user-images.githubusercontent.com/52512867/120227368-62112e80-c21f-11eb-82a3-ecbc734c3534.png)
 
     Também temos na primeira imagem uma notação de @OneToMany, nada mais é do que dizer que um Usuario pode ter mais de 1 Veiculo.
 
     Seguindo essa dinâmica, enquanto o assunto é Banco de Dados, nada mais justo que falar da Interface Repository.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/80d0cb0c-c1e4-4503-943d-05238c008658/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/80d0cb0c-c1e4-4503-943d-05238c008658/Untitled.png)
+   ![9](https://user-images.githubusercontent.com/52512867/120227375-663d4c00-c21f-11eb-8e69-c4021ce98b68.png)
 
     Onde nós faremos a comunicação entre a Entidade que foi criada e nosso banco de dados, aqui representado no trecho "extends JpaRepository<Usuario, Long>", cada @Entity deve ter seu próprio @Repository.
 
     Mas vale lembrar, que somente o @Repository não consegue fazer nada sozinho, por isso pedimos ajuda de outra classe para fazer nossas manipulações, isso mesmo você acertou meu caro leitor entusiasmado, estamos falando da classe Service.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2975f128-a04f-43db-a1cb-bdc933a1325e/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2975f128-a04f-43db-a1cb-bdc933a1325e/Untitled.png)
+    ![10](https://user-images.githubusercontent.com/52512867/120227380-69d0d300-c21f-11eb-982f-897a520ed77d.png)
 
     Como todas as Classes / Interfaces anteriores nós precisamos da anotação @Service para defini-la segundo as métricas do Spring, mas beleza o que ela efetivamente faz? Dentro da Service nós configuramos as funções que serão chamadas quando o usuário final realizar alguma ação. 
 
@@ -95,7 +95,7 @@ Mas então, beleza o desafio é criar um gerenciamento de Usuários e Veículos 
 
     Boa pergunta, chegamos nos nossos Controllers ou Controladores, aqui é onde o filho chora e a mãe não vê, onde a magia acontece, dentro dos Controllers nós temos todas as chamadas que serão realizadas pelo nosso sistema, lembra aquele tal de Breakpoint? É aqui que ele fica.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/70f85036-e3b2-41b4-9a6f-b82680626123/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/70f85036-e3b2-41b4-9a6f-b82680626123/Untitled.png)
+    ![11](https://user-images.githubusercontent.com/52512867/120227385-6d645a00-c21f-11eb-8231-532fa0d12937.png)
 
     Como sempre precisamos colocar a notação @RestCrontroller igual todas nossas classes e interfaces para trás, e vamos chamar nossos métodos, de Requisição e Resposta (Isso é o brabo do REST), aqui nós teremos nossos métodos POST, GET, PUT, DEL mas neste projeto usamos apenas POST, GET e PUT (Postar ou Criar / Pegar / Colocar ou Atualizar) respectivamente.
 
@@ -105,56 +105,56 @@ Mas então, beleza o desafio é criar um gerenciamento de Usuários e Veículos 
 
     Ele é composto de um @Service como já vimos a cima e sabemos o que é, aqui funciona da mesma forma.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/19257508-839b-4431-b775-a8542709c560/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/19257508-839b-4431-b775-a8542709c560/Untitled.png)
+    ![12](https://user-images.githubusercontent.com/52512867/120227404-72c1a480-c21f-11eb-8237-8da976b9c1ec.png)
 
     Aqui chamado de FipeService, pois irá acessar a API da Tabela FIPE.
 
     Também possui um @Controller igual o que já foi citado aqui.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8dead943-0cd8-40c7-b245-dbdc6e938847/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8dead943-0cd8-40c7-b245-dbdc6e938847/Untitled.png)
+    ![13](https://user-images.githubusercontent.com/52512867/120227410-76552b80-c21f-11eb-9e60-69f70b54b5f5.png)
 
     Para finalizar não posso esquecer do nosso Helper, que é literalmente um "Ajudante" conforme diz o nome, onde ele irá realizar operações mais complexas de lógica, dando uma mãozinha pro service, ambos são bem amigos e se apoiam no trabalho para ninguém ficar sobrecarregado, aqui usamos o Helper para nossa logística de veículos, saber se os nossos veículos estarão disponíveis para uso naquele dia específico.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3d1db04b-43f5-435a-8d12-1a3c77ad41e1/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3d1db04b-43f5-435a-8d12-1a3c77ad41e1/Untitled.png)
+ ![14](https://user-images.githubusercontent.com/52512867/120227417-7a814900-c21f-11eb-8686-dbe8d354f8ad.png)
 
-    ---
+   ---
 
-    # Padrão de Projeto
+   # Padrão de Projeto
 
-    Caso você já conheça sobre Padrão de Projetos, você deve ter percebido que foi utilizado o padrão MVC (Model, View e Controller), para facilitar nossa implementação do código, não foi utilizado o "View" pois não temos um Frond-End para esse projeto. Segue organização do projeto.
+   Caso você já conheça sobre Padrão de Projetos, você deve ter percebido que foi utilizado o padrão MVC (Model, View e Controller), para facilitar nossa implementação do código, não foi utilizado o "View" pois não temos um Frond-End para esse projeto. Segue organização do projeto.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f83cace-b648-493f-ba82-08d74aa0fdea/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f83cace-b648-493f-ba82-08d74aa0fdea/Untitled.png)
+   ![15](https://user-images.githubusercontent.com/52512867/120227427-8240ed80-c21f-11eb-87f7-debf0d1c1a69.png)
 
-    ---
+   ---
 
-    # Funcionamento da API
+   # Funcionamento da API
 
-    Cadastro do usuário:
+   Cadastro do usuário:
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07e95ecd-8a32-43d6-a0a9-00be8815928b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07e95ecd-8a32-43d6-a0a9-00be8815928b/Untitled.png)
+   ![16](https://user-images.githubusercontent.com/52512867/120227436-8967fb80-c21f-11eb-8496-115869046d87.png)
 
-    Erro ao cadastrar com campo vazio:
+   Erro ao cadastrar com campo vazio:
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a67eedf0-ae53-498e-bc86-4a88e3d07030/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a67eedf0-ae53-498e-bc86-4a88e3d07030/Untitled.png)
+   ![17](https://user-images.githubusercontent.com/52512867/120227439-8cfb8280-c21f-11eb-90e5-44109b7c1354.png)
 
-    Cadastro de veículo, aqui utilizado pelo próprio Path:
+   Cadastro de veículo, aqui utilizado pelo próprio Path:
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94cb094a-d30b-4029-8431-1974461d57a7/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94cb094a-d30b-4029-8431-1974461d57a7/Untitled.png)
+   ![18](https://user-images.githubusercontent.com/52512867/120227483-9f75bc00-c21f-11eb-8a34-74bcf02829d9.png)
 
-    Quando veículo não existe:
+   Quando veículo não existe:
+   
+   ![19](https://user-images.githubusercontent.com/52512867/120227494-a4d30680-c21f-11eb-9207-9442b2b78c8c.png)
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/40a7133b-4a50-4376-a2b0-1ba013fddf88/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/40a7133b-4a50-4376-a2b0-1ba013fddf88/Untitled.png)
+   Vinculando o veículo com o usuário pelo id de ambos:
 
-    Vinculando o veículo com o usuário pelo id de ambos:
+   ![20](https://user-images.githubusercontent.com/52512867/120227510-ac92ab00-c21f-11eb-9c34-dcc56790b209.png)
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/238613ec-dea0-46d3-9cfe-3d611a0a66ab/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/238613ec-dea0-46d3-9cfe-3d611a0a66ab/Untitled.png)
+   Trazendo os veículos cadastrados para um usuário com a validação se estão disponíveis para uso no rodízio:
 
-    Trazendo os veículos cadastrados para um usuário com a validação se estão disponíveis para uso no rodízio:
+   ![21](https://user-images.githubusercontent.com/52512867/120227525-b2888c00-c21f-11eb-8fd0-188ad7876e46.png)
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c9b9545-7548-49fe-bbdf-6d238af74a7a/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c9b9545-7548-49fe-bbdf-6d238af74a7a/Untitled.png)
+   ---
 
-    ---
+   # Conclusão
 
-    # Conclusão
-
-    Foi bastante desafiador e produtivo a realização desse desafio, não conhecia várias das tecnologias utilizadas, aprendi bastante e espero que esse blogpost possa dar uma noção a você, sim você meu bom leitor entusiasmado, sobre esse grande universo que é o desenvolvimento em Java com SpringFramework. Fico por aqui, muito obrigado!
+   Foi bastante desafiador e produtivo a realização desse desafio, não conhecia várias das tecnologias utilizadas, aprendi bastante e espero que esse blogpost possa dar uma noção a você, sim você meu bom leitor entusiasmado, sobre esse grande universo que é o desenvolvimento em Java com SpringFramework. Fico por aqui, muito obrigado!
